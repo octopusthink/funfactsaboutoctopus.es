@@ -169,9 +169,9 @@ export const theme = {
 
     buttons: {
       neutral: colors.white,
-      default: colors.pink600,
-      defaultDark: colors.cyan600,
-      defaultLight: colors.pink200,
+      default: colors.blue800,
+      defaultDark: colors.blue900,
+      defaultLight: colors.blue400,
     },
   },
 
@@ -236,7 +236,7 @@ export const theme = {
     fonts: {
       body: fonts.slabSerif,
       heading: fonts.slabSerif,
-      interfaceUI: fonts.system,
+      interfaceUI: fonts.slabSerif,
     },
 
     fontWeights: {
