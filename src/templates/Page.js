@@ -13,7 +13,7 @@ export const Page = (props) => {
 
   const { page } = data;
   const { htmlAst } = page;
-  const { title, source, sourceUrl } = page.fields;
+  const { image, number, title, source, sourceUrl } = page.fields;
 
   const content = markdown(htmlAst);
 
@@ -25,73 +25,114 @@ export const Page = (props) => {
 
       <section
         css={css`
-          max-width: 48rem;
-          margin: 3.2rem auto;
-          letter-spacing: -0.0125em;
+          display: grid;
+          grid-template-columns: auto 48rem;
+          border: 10px solid black;
+          grid-gap: 4.8rem;
+          padding: 4.8rem;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
         `}
       >
-        <Heading>{title}</Heading>
-        {content}
-
-        {sourceUrl && (
-          <Paragraph
-            css={css`
-              font-style: italic;
-              font-family: Pulpo-LightItalic;
-            `}
-          >
-            <Link href={sourceUrl} as="a" external>
-              Source: {source}
-            </Link>
-          </Paragraph>
-        )}
-
-        <div
+        <img
+          alt=""
+          src={image}
           css={css`
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            align-items: center;
-            justify-content: space-between;
-
-            button {
-              //font-family: Pulpo-Regular;
-              font-family: Pulpo-LightItalic;
-              //font-size: 1.7rem;
-              //letter-spacing: 0.05em;
-              //text-transform: uppercase;
-              vertical-align: center;
-            }
+            max-width: 100%;
+            height: auto;
+            filter: grayscale(90%) brightness(150%) contrast(90%);
+          `}
+        />
+        <section
+          css={css`
+            //margin: 3.2rem auto;
+            letter-spacing: -0.0125em;
           `}
         >
-          <Button
-            minimal
-            to="#"
+          <Heading
             css={css`
-              justify-self: start;
+              position: relative;
             `}
           >
-            <Icon name="arrow-left-circle" />
-            Previous
-          </Button>
-          <Button
-            minimal
-            to="random"
+            <span
+              css={css`
+                font-family: Pulpo-Medium;
+                position: absolute;
+                top: -10rem;
+                left: -18rem;
+                font-size: 23rem;
+                letter-spacing: -0.07em;
+                opacity: 0.25;
+                color: #333;
+              `}
+            >
+              {number}
+            </span>{' '}
+            {title}
+          </Heading>
+          {content}
+
+          {sourceUrl && (
+            <Paragraph
+              css={css`
+                font-style: italic;
+                font-family: Pulpo-LightItalic;
+              `}
+            >
+              <Link href={sourceUrl} as="a" external>
+                Source: {source}
+              </Link>
+            </Paragraph>
+          )}
+
+          <div
             css={css`
-              justify-self: center;
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              align-items: center;
+              justify-content: space-between;
+
+              button {
+                //font-family: Pulpo-Regular;
+                font-family: Pulpo-LightItalic;
+                //font-size: 1.7rem;
+                //letter-spacing: 0.05em;
+                //text-transform: uppercase;
+                vertical-align: center;
+              }
             `}
           >
-            Random
-          </Button>
-          <Button
-            minimal
-            to="#"
-            css={css`
-              justify-self: end;
-            `}
-          >
-            Next <Icon name="arrow-right-circle" />
-          </Button>
-        </div>
+            <Button
+              minimal
+              to="#"
+              css={css`
+                justify-self: start;
+              `}
+            >
+              <Icon name="arrow-left-circle" />
+              Previous
+            </Button>
+            <Button
+              minimal
+              to="random"
+              css={css`
+                justify-self: center;
+              `}
+            >
+              Random
+            </Button>
+            <Button
+              minimal
+              to="#"
+              css={css`
+                justify-self: end;
+              `}
+            >
+              Next <Icon name="arrow-right-circle" />
+            </Button>
+          </div>
+        </section>
       </section>
     </App>
   );
@@ -101,10 +142,12 @@ export const pageQuery = graphql`
   query($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
       fields {
+        image
+        number
         slug
-        title
         sourceUrl
         source
+        title
       }
       htmlAst
       rawMarkdownBody
