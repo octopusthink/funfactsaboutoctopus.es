@@ -243,22 +243,6 @@ const createPages = async ({ actions, graphql }) => {
 
   const markdownQueryResult = await graphql(`
     query {
-      blogPosts: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "//content/blog/" } }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              author
-              date
-              slug
-              title
-              tags
-            }
-          }
-        }
-      }
       pages: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }
       ) {
@@ -281,10 +265,8 @@ const createPages = async ({ actions, graphql }) => {
     throw markdownQueryResult.errors;
   }
 
-  const { blogPosts, pages } = markdownQueryResult.data;
+  const { pages } = markdownQueryResult.data;
 
-  makeBlogPosts({ actions, blogPosts });
-  makeBlogTags({ actions, blogPosts, tags });
   makePages({ actions, pages });
 };
 
