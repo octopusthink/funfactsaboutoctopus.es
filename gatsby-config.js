@@ -12,7 +12,7 @@ module.exports = {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: '5',
-        matomoUrl: '//analytics.octopusth.ink/',
+        matomoUrl: 'https://analytics.octopusth.ink',
         siteUrl: 'https://funfactsaboutoctopus.es',
         requireConsent: false,
         disableCookies: true,
