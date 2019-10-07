@@ -9,6 +9,16 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
     {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '5',
+        matomoUrl: '//analytics.octopusth.ink/',
+        siteUrl: 'https://funfactsaboutoctopus.es',
+        requireConsent: false,
+        disableCookies: true,
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
