@@ -1,7 +1,7 @@
 ---
-title: Your cool home page.
+title: funfactsaboutoctopus.es
 ---
 
-This is your new homepage!
+Coming World Octopus Day. (8 October, of course.)
 
 [Learn more](/about).

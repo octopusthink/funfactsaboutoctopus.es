@@ -8,4 +8,4 @@ image: /images/OctopusMarmoratus.jpg
 
 Two hearts serve to move blood past the gills, while the third pumps blood through the rest of the body.
 
-In spite of this surplus of hearts, octopuses are solitary creatures who don’t tend to make friends. They're more likely to eat another octopus than invite them to dinner.
+In spite of this surplus of hearts, octopuses are solitary creatures who don’t tend to make friends. They're more likely to _eat_ another octopus than invite them to dinner!
