@@ -93,7 +93,7 @@ const colors = {
 const fonts = {
   system:
     '-apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif',
-  slabSerif: 'Pulpo-Light',
+  slabSerif: 'pulpo',
 };
 
 export const theme = {
@@ -240,13 +240,13 @@ export const theme = {
     },
 
     fontWeights: {
-      body: 400,
-      bodyBold: 600,
-      heading: 400,
+      body: 300,
+      bodyBold: 500,
+      heading: 300, // Consider 300 or 400.
       pageTitle: 400,
       subtitle: 300,
-      interfaceUI: 500,
-      interfaceUIBold: 700,
+      interfaceUI: 300,
+      interfaceUIBold: 500,
     },
 
     baseSizes: {
@@ -261,7 +261,7 @@ export const theme = {
 
     lineHeights: {
       heading: 1,
-      body: 1.5,
+      body: 1.4,
       interfaceUI: 1.2,
     },
   },

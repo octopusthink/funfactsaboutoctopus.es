@@ -57,7 +57,6 @@ export const Page = (props) => {
           >
             <span
               css={css`
-                font-family: Pulpo-Medium;
                 position: absolute;
                 top: -10rem;
                 left: -18rem;
@@ -77,7 +76,6 @@ export const Page = (props) => {
             <Paragraph
               css={css`
                 font-style: italic;
-                font-family: Pulpo-LightItalic;
               `}
             >
               <Link href={sourceUrl} as="a" external>
@@ -94,8 +92,7 @@ export const Page = (props) => {
               justify-content: space-between;
 
               button {
-                //font-family: Pulpo-Regular;
-                font-family: Pulpo-LightItalic;
+                font-style: italic;
                 //font-size: 1.7rem;
                 //letter-spacing: 0.05em;
                 //text-transform: uppercase;
