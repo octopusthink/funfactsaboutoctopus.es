@@ -23,6 +23,7 @@ export const App = (props) => {
       <Helmet>
         <meta name="description" content={siteDescription} />
         <title>Octopus Think</title>
+        <link rel="stylesheet" href="https://use.typekit.net/zhd4uqh.css" />
       </Helmet>
 
       {children}

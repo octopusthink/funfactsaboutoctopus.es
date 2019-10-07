@@ -1,9 +1,9 @@
 ---
-title: About Us.
+title: About
 ---
 
-We are _very_ cool.
+Octopuses are really bizarre creatures. Let's learn more.
 
-## Really?
+## Are you sure "octopuses" is right?
 
 Yes.
