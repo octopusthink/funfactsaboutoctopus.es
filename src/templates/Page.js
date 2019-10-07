@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 
 import { markdown } from '../utils/markdown';
 
-import App from './app';
+import App from './App';
 
 export const Page = (props) => {
   const { data } = props;

@@ -2,7 +2,7 @@ import { PageTitle } from '@octopusthink/nautilus';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import App from './app';
+import App from './App';
 
 export const NotFound = (props) => {
   return (
