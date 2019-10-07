@@ -1,7 +1,7 @@
 {
-  "name": "@octopusthink/ghost-ship",
+  "name": "@octopusthink/funfactsaboutoctopus.es",
   "private": true,
-  "description": "The Octopus Think blog + site starter for Gatsby",
+  "description": "A few things you may not know about octopuses.",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
