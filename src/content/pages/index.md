@@ -1,6 +1,6 @@
 ---
 image: /images/Hugo-Octopus.jpg
-title: funfactsaboutoctopus.es
+title: Fun facts about octopuses
 ---
 
 As a celebration of 2019's World Octopus Day (October 8, _of course_), we've put together an adorable collection of octopus facts.
