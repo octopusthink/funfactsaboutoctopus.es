@@ -17,7 +17,7 @@ export const Page = (props) => {
 
   const content = markdown(htmlAst);
 
-  const twoDigitNumber = number < 9 ? '0' + number : number;
+  const twoDigitNumber = number < 10 ? '0' + number : number;
 
   return (
     <App>
