@@ -17,6 +17,8 @@ export const Page = (props) => {
 
   const content = markdown(htmlAst);
 
+  const twoDigitNumber = number < 9 ? '0' + number : number;
+
   return (
     <App>
       <Helmet>
@@ -74,7 +76,6 @@ export const Page = (props) => {
               top: 32rem;
               box-shadow: 0 4px 10px rgba(0, 0, 0, 0.125);
             }
-
             letter-spacing: -0.0125em;
           `}
         >
@@ -86,15 +87,20 @@ export const Page = (props) => {
             <span
               css={css`
                 position: absolute;
-                top: -10rem;
-                left: -18rem;
+                top: -12rem;
+                left: -8rem;
                 font-size: 23rem;
                 letter-spacing: -0.07em;
                 opacity: 0.25;
                 color: #333;
+
+                @media screen and (min-width: 640px) {
+                  top: -10rem;
+                  left: -18rem;
+                }
               `}
             >
-              {number}
+              {twoDigitNumber}
             </span>{' '}
             {title}
           </Heading>
