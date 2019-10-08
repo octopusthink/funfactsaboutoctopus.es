@@ -9,13 +9,18 @@ import { markdown } from '../utils/markdown';
 import App from './App';
 
 export const Page = (props) => {
-  const { data } = props;
+  const { data, pageContext } = props;
+  const { allFactSlugs, nextSlug, previousSlug } = pageContext;
 
   const { page } = data;
   const { htmlAst } = page;
   const { image, number, title, source, sourceUrl } = page.fields;
 
   const content = markdown(htmlAst);
+
+  const randomSlug = () => {
+    return allFactSlugs[Math.floor(Math.random() * allFactSlugs.length)];
+  };
 
   return (
     <App>
@@ -113,7 +118,8 @@ export const Page = (props) => {
           >
             <Button
               minimal
-              to="#"
+              navigation
+              to={previousSlug}
               css={css`
                 justify-self: start;
               `}
@@ -123,7 +129,8 @@ export const Page = (props) => {
             </Button>
             <Button
               minimal
-              to="random"
+              navigation
+              to={randomSlug()}
               css={css`
                 justify-self: center;
               `}
@@ -131,8 +138,9 @@ export const Page = (props) => {
               Random
             </Button>
             <Button
+              navigation
               minimal
-              to="#"
+              to={nextSlug}
               css={css`
                 justify-self: end;
               `}
