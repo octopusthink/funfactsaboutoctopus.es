@@ -43,8 +43,11 @@ const Header = (props) => {
           vertical-align: center;
           display: block;
           padding: 1.6rem;
-          line-height: 1;
           width: 100%;
+        }
+
+        .icon {
+          line-height: 1;
         }
       `}
     >
@@ -54,6 +57,7 @@ const Header = (props) => {
         css={css`
           @media screen and (max-width: 459px) {
             text-align: right;
+            margin-top: -1px;
           }
         `}
       >
@@ -65,6 +69,7 @@ const Header = (props) => {
         css={css`
           @media screen and (max-width: 459px) {
             text-align: left;
+            margin-top: -1px;
           }
         `}
       >
@@ -82,7 +87,7 @@ const Header = (props) => {
           }
         `}
       >
-        <Icon small name="arrow-left" />
+        <Icon className="icon" small name="arrow-left" />
         Previous
       </Link>
       <Link
@@ -92,7 +97,7 @@ const Header = (props) => {
           text-align: right;
         `}
       >
-        Next <Icon small name="arrow-right" />
+        Next <Icon className="icon" small name="arrow-right" />
       </Link>
     </nav>
   );
