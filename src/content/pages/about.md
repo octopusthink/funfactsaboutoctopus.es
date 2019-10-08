@@ -11,7 +11,7 @@ We're [Octopus Think](https://octopusth.ink/), a design & development company ba
 
 ## You missed a fact!
 
-We're adding new facts when we have the time, but if you'd like to add something, start by [opening an issue](https://github.com/octopusthink/funfactsaboutoctopus.es/issue/new) on GitHub.
+We're adding new facts when we have the time, but if you'd like to add something, start by [opening an issue](https://github.com/octopusthink/funfactsaboutoctopus.es/issues/new) on GitHub.
 
 ## Are you sure "octopuses" is right?
 
