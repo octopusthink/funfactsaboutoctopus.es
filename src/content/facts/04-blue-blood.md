@@ -2,7 +2,7 @@
 title: Octopuses have blue blood.
 source: How Stuff Works
 sourceUrl: https://animals.howstuffworks.com/marine-life/why-is-octopus-blood-blue.htm
-number: 02
+number: 04
 image: /images/Haeckel-Gamochonia.jpg
 ---
 
