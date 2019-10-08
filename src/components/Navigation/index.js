@@ -19,9 +19,16 @@ const Header = (props) => {
         top: 0;
 
         @media screen and (min-width: 460px) {
-          grid-template-columns: auto auto auto auto;
-          align-items: center;
-          justify-content: space-between;
+          ${!previousSlug &&
+            css`
+              text-align: center;
+            `}
+          ${previousSlug &&
+            css`
+              grid-template-columns: auto auto auto auto;
+              align-items: center;
+              justify-content: space-between;
+            `}
         }
 
         @media screen and (min-width: 640px) {
@@ -48,7 +55,6 @@ const Header = (props) => {
           &:hover,
           &:focus {
             border-radius: 6px;
-            color: ${theme.colors.neutral.white};
             text-decoration: underline;
           }
         }
@@ -76,7 +82,6 @@ const Header = (props) => {
           to={randomSlug}
           css={css`
             @media screen and (max-width: 459px) {
-              text-align: left;
               margin-top: -1px;
             }
           `}
