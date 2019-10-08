@@ -6,6 +6,6 @@ number: 04
 image: /images/Haeckel-Gamochonia.jpg
 ---
 
-Human blood is red because our blood contains the iron-based hemoglobin, a protein containing iron that binds to oxygen and transports it throughout our bloodstreams. Octopus blood contains a similar protein called hemocyanin, which contains copper instead of iron.
+Human blood is red because our blood contains haemoglobin, an iron-rich protein that transports oxygen. Octopuses blood contains heamocyanin, which contains copper (blue) instead of iron (red).
 
-Copper is a better oxygen transporter when the water temperature is low and there isn't much oxygen. Since octopuses live all over the world, this allows them to deal with all sorts of extremes of temperature without having a panic attack.
+Copper is a better oxygen transporter in cold, deep waters where octopuses tend to live. It isn't super efficient though, so octopuses have three hearts to compensate. They also take it easy on the cardio. Wise move, friend.
