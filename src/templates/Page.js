@@ -26,24 +26,35 @@ export const Page = (props) => {
       <section
         css={css`
           display: grid;
-          grid-template-columns: auto 48rem;
-          border: 10px solid black;
+          grid-template-columns: 1fr 48rem 4.8rem;
+          //border: 10px solid black;
           grid-gap: 4.8rem;
-          padding: 4.8rem;
+          //padding: 4.8rem;
           align-items: center;
           justify-content: center;
           min-height: 100vh;
         `}
       >
-        <img
-          alt=""
-          src={image}
+        <div
           css={css`
-            max-width: 100%;
-            height: auto;
-            filter: grayscale(90%) brightness(150%) contrast(90%);
+            height: 100vh;
+            overflow: hidden;
           `}
-        />
+        >
+          <img
+            alt=""
+            src={image}
+            css={css`
+              width: 100%;
+              height: 100%;
+              max-height: 100%;
+              max-width: 100%;
+              display: block;
+              object-fit: cover;
+              filter: grayscale(90%) brightness(110%) contrast(90%);
+            `}
+          />
+        </div>
         <section
           css={css`
             //margin: 3.2rem auto;
