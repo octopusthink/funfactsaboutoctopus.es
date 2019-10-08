@@ -31,13 +31,14 @@ export const Page = (props) => {
       <section
         css={css`
           display: grid;
-          grid-template-columns: 1fr 48rem 4.8rem;
-          //border: 10px solid black;
           grid-gap: 4.8rem;
-          //padding: 4.8rem;
           align-items: center;
           justify-content: center;
           min-height: 100vh;
+
+          @media screen and (min-width: 640px) {
+            grid-template-columns: 1fr 48rem 4.8rem;
+          }
         `}
       >
         <div
@@ -57,12 +58,27 @@ export const Page = (props) => {
               display: block;
               object-fit: cover;
               filter: grayscale(90%) brightness(110%) contrast(90%);
+
+              @media screen and (max-width: 639px) {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+              }
             `}
           />
         </div>
         <section
           css={css`
-            //margin: 3.2rem auto;
+            @media screen and (max-width: 639px) {
+              background: rgba(255, 255, 255, 0.95);
+              margin: 0 2.4rem;
+              padding: 2.4rem;
+              position: absolute;
+              top: 32rem;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.125);
+            }
             letter-spacing: -0.0125em;
           `}
         >
@@ -74,17 +90,31 @@ export const Page = (props) => {
             <span
               css={css`
                 position: absolute;
-                top: -10rem;
-                left: -18rem;
+                top: -12rem;
+                left: -8rem;
                 font-size: 23rem;
                 letter-spacing: -0.07em;
-                opacity: 0.25;
-                color: #333;
+                opacity: 0.15;
+                color: #fefefe;
+                text-shadow:-4px -4px 0 #666,
+                -4px 4px 0 #666,4px -4px 0 #666,
+                4px 4px 0 #666; }
+
+                @media screen and (min-width: 640px) {
+                  top: -10rem;
+                  left: -18rem;
+                }
               `}
             >
-              {number}
+              {twoDigitNumber}
             </span>{' '}
-            {title}
+            <span
+              css={css`
+                position: relative;
+              `}
+            >
+              {title}
+            </span>
           </Heading>
           {content}
 
