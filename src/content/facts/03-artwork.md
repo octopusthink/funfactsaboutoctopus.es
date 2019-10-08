@@ -1,7 +1,7 @@
 ---
 title: They paint to chill out.
-source: Oregon State
-sourceUrl: http://blogs.oregonstate.edu/breakingwaves/2012/10/02/hmsc-octopus-takes-up-painting-for-october/
+source: Everything Octopus
+sourceUrl: http://everythingoctopus.blogspot.com/2012/11/eight-armed-painter-to-debut-talent.html
 number: 03
 image: /images/Octopus-vulgaris-Americanus.jpg
 imageSource: https://digitalcollections.nypl.org/items/510d47da-9fa9-a3d9-e040-e00a18064a99#/?zoom=true
