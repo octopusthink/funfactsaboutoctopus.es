@@ -245,8 +245,8 @@ export const theme = {
       heading: 300, // Consider 300 or 400.
       pageTitle: 400,
       subtitle: 300,
-      interfaceUI: 300,
-      interfaceUIBold: 500,
+      interfaceUI: 400,
+      interfaceUIBold: 600,
     },
 
     baseSizes: {

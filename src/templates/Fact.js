@@ -81,13 +81,13 @@ export const Page = (props) => {
             </Link>
           </Paragraph>
         )}
-
-        <Navigation
-          nextSlug={nextSlug}
-          previousSlug={previousSlug}
-          randomSlug={randomSlug}
-        />
       </PageWrapper>
+
+      <Navigation
+        nextSlug={nextSlug}
+        previousSlug={previousSlug}
+        randomSlug={randomSlug}
+      />
     </App>
   );
 };
