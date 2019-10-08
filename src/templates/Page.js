@@ -91,8 +91,11 @@ export const Page = (props) => {
                 left: -8rem;
                 font-size: 23rem;
                 letter-spacing: -0.07em;
-                opacity: 0.25;
-                color: #333;
+                opacity: 0.15;
+                color: #fefefe;
+                text-shadow:-4px -4px 0 #666,
+                -4px 4px 0 #666,4px -4px 0 #666,
+                4px 4px 0 #666; }
 
                 @media screen and (min-width: 640px) {
                   top: -10rem;
@@ -102,7 +105,13 @@ export const Page = (props) => {
             >
               {twoDigitNumber}
             </span>{' '}
-            {title}
+            <span
+              css={css`
+                position: relative;
+              `}
+            >
+              {title}
+            </span>
           </Heading>
           {content}
 
