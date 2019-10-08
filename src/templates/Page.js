@@ -21,6 +21,7 @@ export const Page = (props) => {
   const randomSlug = () => {
     return allFactSlugs[Math.floor(Math.random() * allFactSlugs.length)];
   };
+  const twoDigitNumber = number < 10 ? '0' + number : number;
 
   return (
     <App>
