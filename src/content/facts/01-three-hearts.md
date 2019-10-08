@@ -2,7 +2,6 @@
 title: Octopuses have three hearts, but few friends.
 source: Wikipedia
 sourceUrl: https://en.wikipedia.org/wiki/Octopus
-number: 01
 image: /images/OctopusMarmoratus.jpg
 ---
 

@@ -2,7 +2,6 @@
 title: Octopuses can see with their skin.
 source: New Scientist
 sourceUrl: https://www.newscientist.com/article/mg23931980-200-the-colour-blind-octopus-that-mastered-the-art-of-disguise/
-number: 08
 image: /images/Octopus-Levis1.jpg
 imageSource: https://www.flickr.com/photos/biodivlibrary/6261007608
 ---

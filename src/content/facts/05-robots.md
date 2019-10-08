@@ -2,7 +2,6 @@
 title: Humans are modelling robots after them.
 source: IEEE Spectrum
 sourceUrl: https://spectrum.ieee.org/robotics/robotics-hardware/robot-octopus-points-the-way-to-soft-robotics-with-eight-wiggly-arms
-number: 05
 image: /images/Japetella-diaphana-arms.jpg
 imageSource: https://commons.wikimedia.org/wiki/File:Japetella_diaphana_arms.jpg
 ---

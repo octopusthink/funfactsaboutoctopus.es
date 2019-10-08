@@ -4,7 +4,6 @@ source: Nature
 sourceUrl: https://www.nature.com/articles/d41586-017-00612-y
 source2: https://www.sciencealert.com/it-s-official-octopus-and-squid-evolution-is-weirder-than-we-could-have-ever-imagined
 source3: https://phys.org/news/2017-04-smart-cephalopods-genome-evolution-prolific.html
-number: 06
 image: /images/pouple-commun.jpg
 ---
 
