@@ -159,6 +159,12 @@ const onCreateNode = ({ actions, node, getNode }) => {
         slug = `/${fileName}`;
       }
 
+      createNodeField({
+        node,
+        name: 'fact',
+        value: slug.match(/(\d*)-/)[1],
+      });
+
       slug = slug.replace(/\d+-/, '');
     }
 
@@ -209,7 +215,7 @@ const createPages = async ({ actions, graphql }) => {
     query {
       facts: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "//content/facts/.+?/" } }
-        sort: { fields: fields___slug, order: ASC }
+        sort: { fields: fields___fact, order: ASC }
       ) {
         edges {
           node {
