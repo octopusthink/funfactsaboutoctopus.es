@@ -3,20 +3,16 @@ image: /images/Haeckel-Gamochonia.jpg
 title: About
 ---
 
-Octopuses are really bizarre creatures. To celebrate [World Octopus Day](https://www.daysoftheyear.com/days/world-octopus-day/) for 2019, we made this website to celebrate our ocean friends.
+Octopuses are really strange and wonderful creatures. Let's learn more about them!
 
-## Who are you, anyway?
+## Who are you?
 
 We're [Octopus Think](https://octopusth.ink/), a design & development company based in Scotland.
 
-[We're available to hire](https://octopusthink.com/contact/).
+## You missed a fact!
 
-## How can I add more facts to this site?
-
-Send us an email ([hello@octopusthink.com](mailto:hello@octopusthink.com)) with the fact, source, and source URL.
-
-The [source code for this site](https://github.com/octopusthink/funfactsaboutoctopus.es) available on GitHub, if you're technical!
+We're adding new facts when we have the time, but if you'd like to add something, start by [opening an issue](https://github.com/octopusthink/funfactsaboutoctopus.es/issue/new) on GitHub.
 
 ## Are you sure "octopuses" is right?
 
-[Yes](https://www.merriam-webster.com/words-at-play/the-many-plurals-of-octopus-octopi-octopuses-octopodes).
+[Yes](/octopuses).
