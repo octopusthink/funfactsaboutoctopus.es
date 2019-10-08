@@ -2,7 +2,6 @@
 title: Yes, it's “octopuses.” English is weird.
 source: Merriam-Webster
 sourceUrl: https://www.merriam-webster.com/words-at-play/the-many-plurals-of-octopus-octopi-octopuses-octopodes
-number: 07
 image: /images/Hugo-Octopus.jpg
 imageSource: http://theanimalarium.blogspot.com/2010/07/sunday-safari-tentacled-mystery.html
 ---

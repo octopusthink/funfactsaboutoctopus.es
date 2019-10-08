@@ -2,7 +2,6 @@
 title: In Hawaii, the octopus is an alien underworld god.
 source: Kanaloa
 sourceUrl: http://www.kumukahi.org/units/ke_ao_akua/akua/kanaloa
-number: 02
 image: /images/Haeckel-Ophiodea.jpg
 ---
 

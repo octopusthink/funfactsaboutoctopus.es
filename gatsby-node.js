@@ -8,6 +8,9 @@ const { singular } = require('pluralize');
 
 const config = require('./config');
 
+const projectPath = path.resolve(fs.realpathSync(process.cwd()), '.');
+const srcPath = path.resolve(fs.realpathSync(process.cwd()), 'src');
+
 const { useDatesInSlugs } = config;
 
 const makeFacts = ({ actions, facts }) => {
@@ -42,10 +45,14 @@ const makeFacts = ({ actions, facts }) => {
   }
 };
 
-const makePages = ({ actions, pages }) => {
+const makePages = ({ actions, facts, pages }) => {
   const { createPage } = actions;
 
   if (pages) {
+    const allFactSlugs = facts.edges.map((edge) => {
+      return edge.node.fields.slug;
+    });
+
     pages.edges.forEach((edge, index) => {
       createPage({
         path: edge.node.fields.slug,
@@ -55,6 +62,7 @@ const makePages = ({ actions, pages }) => {
         context: {
           id: edge.node.id,
           slug: edge.node.fields.slug,
+          allFactSlugs,
         },
       });
     });
@@ -264,7 +272,16 @@ const createPages = async ({ actions, graphql }) => {
   const { facts, pages } = markdownQueryResult.data;
 
   makeFacts({ actions, facts });
-  makePages({ actions, pages });
+  makePages({ actions, facts, pages });
 };
 
-module.exports = { createPages, onCreateNode };
+const onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      extensions: ['.mjs', '.jsx', '.js', '.json'],
+      modules: [srcPath, projectPath, 'node_modules'],
+    },
+  });
+};
+
+module.exports = { createPages, onCreateNode, onCreateWebpackConfig };
