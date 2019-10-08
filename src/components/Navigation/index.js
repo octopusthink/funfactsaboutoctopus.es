@@ -25,7 +25,7 @@ const Header = (props) => {
         }
 
         @media screen and (min-width: 640px) {
-          position: absolute;
+          position: fixed;
           border-radius: 6px;
           top: auto;
           bottom: 2.4rem;
@@ -44,6 +44,13 @@ const Header = (props) => {
           display: block;
           padding: 1.6rem;
           width: 100%;
+
+          &:hover,
+          &:focus {
+            border-radius: 6px;
+            color: ${theme.colors.neutral.white};
+            text-decoration: underline;
+          }
         }
 
         .icon {
@@ -63,42 +70,48 @@ const Header = (props) => {
       >
         About
       </Link>
-      <Link
-        className="navigation-link"
-        to={randomSlug()}
-        css={css`
-          @media screen and (max-width: 459px) {
+      {randomSlug && (
+        <Link
+          className="navigation-link"
+          to={randomSlug}
+          css={css`
+            @media screen and (max-width: 459px) {
+              text-align: left;
+              margin-top: -1px;
+            }
+          `}
+        >
+          Random
+        </Link>
+      )}
+
+      {previousSlug && (
+        <Link
+          className="navigation-link"
+          to={previousSlug}
+          css={css`
             text-align: left;
-            margin-top: -1px;
-          }
-        `}
-      >
-        Random
-      </Link>
 
-      <Link
-        className="navigation-link"
-        to={previousSlug}
-        css={css`
-          text-align: left;
-
-          @media screen and (min-width: 460px) {
-            order: -1;
-          }
-        `}
-      >
-        <Icon className="icon" small name="arrow-left" />
-        Previous
-      </Link>
-      <Link
-        className="navigation-link"
-        to={nextSlug}
-        css={css`
-          text-align: right;
-        `}
-      >
-        Next <Icon className="icon" small name="arrow-right" />
-      </Link>
+            @media screen and (min-width: 460px) {
+              order: -1;
+            }
+          `}
+        >
+          <Icon className="icon" small name="arrow-left" />
+          Previous
+        </Link>
+      )}
+      {nextSlug && (
+        <Link
+          className="navigation-link"
+          to={nextSlug}
+          css={css`
+            text-align: right;
+          `}
+        >
+          Next <Icon className="icon" small name="arrow-right" />
+        </Link>
+      )}
     </nav>
   );
 };

@@ -4,8 +4,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-//import Header from '../components/Header';
-import theme from '../../config/theme';
+import theme from 'config/theme';
 
 export const App = (props) => {
   const siteDescription = 'whatever';
@@ -17,6 +16,7 @@ export const App = (props) => {
           body {
             margin: 0;
             padding: 0;
+            position: relative;
           }
         `}
       />

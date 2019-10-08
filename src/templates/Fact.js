@@ -4,11 +4,10 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import { markdown } from '../utils/markdown';
-
-import App from './App';
-import Navigation from '../components/Navigation';
-import PageWrapper from '../components/PageWrapper';
+import Navigation from 'components/Navigation';
+import PageWrapper from 'components/PageWrapper';
+import App from 'templates/App';
+import { markdown } from 'utils/markdown';
 
 export const Page = (props) => {
   const { data, pageContext } = props;
@@ -16,14 +15,14 @@ export const Page = (props) => {
 
   const { page } = data;
   const { htmlAst } = page;
-  const { image, number, title, source, sourceUrl } = page.fields;
+  const { image, fact: number, title, source, sourceUrl } = page.fields;
 
   const content = markdown(htmlAst);
 
   const randomSlug = () => {
     return allFactSlugs[Math.floor(Math.random() * allFactSlugs.length)];
   };
-  const twoDigitNumber = number < 10 ? '0' + number : number;
+  const twoDigitNumber = number.toString().length < 2 ? '0' + number : number;
 
   return (
     <App>
@@ -86,7 +85,7 @@ export const Page = (props) => {
       <Navigation
         nextSlug={nextSlug}
         previousSlug={previousSlug}
-        randomSlug={randomSlug}
+        randomSlug={randomSlug()}
       />
     </App>
   );
@@ -97,7 +96,7 @@ export const pageQuery = graphql`
     page: markdownRemark(id: { eq: $id }) {
       fields {
         image
-        number
+        fact
         slug
         sourceUrl
         source

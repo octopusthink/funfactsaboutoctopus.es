@@ -2,9 +2,10 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 const PageWrapper = (props) => {
-  const { image, children } = props;
+  const { className, image, children } = props;
   return (
     <main
+      className={className}
       css={css`
         display: grid;
         grid-gap: 4.8rem;
@@ -55,6 +56,7 @@ const PageWrapper = (props) => {
             top: 32rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.125);
           }
+
           letter-spacing: -0.0125em;
         `}
       >

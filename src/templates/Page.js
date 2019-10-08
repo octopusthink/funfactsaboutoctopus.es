@@ -1,21 +1,26 @@
+import { css } from '@emotion/core';
 import { Heading } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import { markdown } from '../utils/markdown';
-
-import App from './App';
-import PageWrapper from '../components/PageWrapper';
+import Navigation from 'components/Navigation';
+import PageWrapper from 'components/PageWrapper';
+import App from 'templates/App';
+import { markdown } from 'utils/markdown';
 
 export const Page = (props) => {
-  const { data } = props;
+  const { data, pageContext } = props;
+  const { allFactSlugs } = pageContext;
 
   const { page } = data;
   const { htmlAst } = page;
   const { image, title } = page.fields;
 
   const content = markdown(htmlAst);
+  const randomSlug = () => {
+    return allFactSlugs[Math.floor(Math.random() * allFactSlugs.length)];
+  };
 
   return (
     <App>
@@ -25,8 +30,16 @@ export const Page = (props) => {
 
       <PageWrapper image={image}>
         <Heading>{title}</Heading>
-        {content}
+        <div
+          css={css`
+            padding-bottom: 6rem;
+          `}
+        >
+          {content}
+        </div>
       </PageWrapper>
+
+      <Navigation randomSlug={randomSlug()} />
     </App>
   );
 };
@@ -36,7 +49,6 @@ export const pageQuery = graphql`
     page: markdownRemark(id: { eq: $id }) {
       fields {
         image
-        number
         slug
         sourceUrl
         source
