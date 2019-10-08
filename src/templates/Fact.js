@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 import { markdown } from '../utils/markdown';
 
 import App from './App';
+import Navigation from '../components/Navigation';
 import PageWrapper from '../components/PageWrapper';
 
 export const Page = (props) => {
@@ -80,6 +81,12 @@ export const Page = (props) => {
             </Link>
           </Paragraph>
         )}
+
+        <Navigation
+          nextSlug={nextSlug}
+          previousSlug={previousSlug}
+          randomSlug={randomSlug}
+        />
       </PageWrapper>
     </App>
   );
