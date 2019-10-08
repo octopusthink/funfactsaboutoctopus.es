@@ -1,13 +1,11 @@
 ---
-title: Native Hawaiians considered the octopus to be a rebellious god of the underworld.
+title: In Hawaii, the octopus is an alien underworld god.
 source: Kanaloa
 sourceUrl: http://www.kumukahi.org/units/ke_ao_akua/akua/kanaloa
 number: 02
-image: /images/Hugo-Octopus.jpg
+image: /images/Haeckel-Ophiodea.jpg
 ---
 
-Kanaloa is one of the four major akua (gods) of traditional Hawaiian religion and ruler of the underworld.
+Kanaloa is one of the four major _akua_ (gods) of traditional Hawaiian religion and ruler of the underworld. For leading the spirits in a failed rebellion, he was cast into the underworld. He did seem to get installed as a god, so it seems like something of a lateral move.
 
-He led the spirits in a rebellion in which the spirits were defeated by the gods and as punishment were thrown in the Underworld.
-
-One translation of the Hawaiian creation myth the Kumulipo suggests that the octopus is the lone survivor of a previous age.
+Depending on how you translate the _Kumulipo_, the Hawaiian creation myth, Kanaloa is basically the last alien survivor of a now-extinct age.
