@@ -8,86 +8,38 @@ const { singular } = require('pluralize');
 
 const config = require('./config');
 
-const { postsPerPage, useDatesInSlugs } = config;
+const { useDatesInSlugs } = config;
 
-// Tags used across the site.
-const tags = new Set();
-
-const makeBlogPosts = ({ actions, blogPosts }) => {
+const makeFacts = ({ actions, facts }) => {
   const { createPage } = actions;
 
-  blogPosts.edges.sort((postA, postB) => {
-    const dateA = moment.utc(postA.node.fields.date);
-    const dateB = moment.utc(postB.node.fields.date);
-
-    if (dateA.isBefore(dateB)) {
-      return 1;
-    }
-    if (dateB.isBefore(dateA)) {
-      return -1;
-    }
-
-    return 0;
+  const allFactSlugs = facts.edges.map((edge) => {
+    return edge.node.fields.slug;
   });
 
-  blogPosts.edges.forEach((edge, index) => {
-    const nextID = index + 1 < blogPosts.edges.length ? index + 1 : 0;
-    const prevID = index - 1 >= 0 ? index - 1 : blogPosts.edges.length - 1;
-    const nextEdge = blogPosts.edges[nextID];
-    const prevEdge = blogPosts.edges[prevID];
-
-    createPage({
-      path: edge.node.fields.slug,
-      component: path.resolve('src/templates/Blog/Post.js'),
-      context: {
-        id: edge.node.id,
-        slug: edge.node.fields.slug,
-        nexttitle: nextEdge.node.fields.title,
-        nextslug: `${nextEdge.node.fields.slug}`,
-        prevtitle: prevEdge.node.fields.title,
-        prevslug: `${prevEdge.node.fields.slug}`,
-      },
-    });
-
-    if (edge.node.fields.tags) {
-      edge.node.fields.tags.forEach((tag) => {
-        tags.add(tag);
-      });
-    }
-  });
-
-  const numberOfPages = Math.ceil(blogPosts.edges.length / postsPerPage);
-
-  Array(numberOfPages)
-    .fill(null)
-    .forEach((item, i) => {
-      const index = i + 1;
+  if (facts) {
+    facts.edges.forEach((edge, index) => {
       createPage({
-        path: index === 1 ? `/blog` : `/blog/page=${index}`,
-        component: path.resolve('src/templates/Blog/index.js'),
+        path: edge.node.fields.slug,
+        component: path.resolve(
+          `src/templates/${edge.node.fields.component}.js`,
+        ),
         context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          currentPage: index,
-          numberOfPages,
-          postsPerPage,
+          id: edge.node.id,
+          slug: edge.node.fields.slug,
+          allFactSlugs: allFactSlugs.filter((slug) => {
+            return slug !== edge.node.fields.slug;
+          }),
+          nextSlug: edge.next
+            ? edge.next.fields.slug
+            : facts.edges[0].node.fields.slug,
+          previousSlug: edge.previous
+            ? edge.previous.fields.slug
+            : facts.edges[facts.edges.length - 1].node.fields.slug,
         },
       });
     });
-};
-
-const makeBlogTags = ({ actions, tags }) => {
-  const { createPage } = actions;
-
-  tags.forEach((tag) => {
-    const slug = `/blog/tags/${kebabCase(tag)}/`;
-
-    createPage({
-      path: slug,
-      component: path.resolve('src/templates/Blog/Tag.js'),
-      context: { slug, tag },
-    });
-  });
+  }
 };
 
 const makePages = ({ actions, pages }) => {
@@ -177,7 +129,7 @@ const onCreateNode = ({ actions, node, getNode }) => {
     const datePrefix = date && useDatesInSlugs ? `${dateMatch[1]}-` : '';
     const fileName = date ? dateMatch[2] : parsedFilePath.name;
 
-    if (parsedFilePath.dir.match(/^pages/)) {
+    if (parsedFilePath.dir === 'pages') {
       const pathWithoutPagesFolder = parsedFilePath.dir.replace(
         /^pages\/?/,
         '',
@@ -196,6 +148,24 @@ const onCreateNode = ({ actions, node, getNode }) => {
       } else {
         slug = `/${parsedFilePath.dir}`;
       }
+    }
+
+    // Handle facts/ slugs specially; don't include the number in the URL
+    // and omit the `/facts/` prefix in the slug.
+    if (parsedFilePath.dir === 'facts') {
+      if (node.frontmatter && node.frontmatter.slug) {
+        slug = `/${node.frontmatter.slug}`;
+      } else {
+        slug = `/${fileName}`;
+      }
+
+      createNodeField({
+        node,
+        name: 'fact',
+        value: slug.match(/(\d*)-/)[1],
+      });
+
+      slug = slug.replace(/\d+-/, '');
     }
 
     // Create the slug, changing `/index` to `/` and removing any double
@@ -243,8 +213,34 @@ const createPages = async ({ actions, graphql }) => {
 
   const markdownQueryResult = await graphql(`
     query {
+      facts: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "//content/facts/.+?/" } }
+        sort: { fields: fields___fact, order: ASC }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              component
+              slug
+              title
+            }
+          }
+          next {
+            fields {
+              slug
+            }
+          }
+          previous {
+            fields {
+              slug
+            }
+          }
+        }
+        totalCount
+      }
       pages: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }
+        filter: { fileAbsolutePath: { regex: "//content/(?!blog|facts).+?/" } }
       ) {
         edges {
           node {
@@ -265,8 +261,9 @@ const createPages = async ({ actions, graphql }) => {
     throw markdownQueryResult.errors;
   }
 
-  const { pages } = markdownQueryResult.data;
+  const { facts, pages } = markdownQueryResult.data;
 
+  makeFacts({ actions, facts });
   makePages({ actions, pages });
 };
 
