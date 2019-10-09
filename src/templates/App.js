@@ -7,7 +7,8 @@ import Helmet from 'react-helmet';
 import theme from 'config/theme';
 
 export const App = (props) => {
-  const siteDescription = 'whatever';
+  const siteDescription =
+    'Everything you didn’t know about octopuses, the ocean’s cleverest creature.';
   const { children } = props;
   return (
     <Nautilus config={{ LinkComponent: Link }} theme={theme}>
