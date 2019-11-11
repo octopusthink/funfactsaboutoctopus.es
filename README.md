@@ -4,6 +4,6 @@ Our 2019 [World Octopus Day](https://www.daysoftheyear.com/days/world-octopus-da
 
 ## License
 
-This project's source code is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
+Copyright (c) 2019 Octopus Think (https://octopusthink.com/)
 
-Note the facts in each page are sourced from third-party sources and are attributed accordingly. They are not part of the code of this repo.
+This project's source code is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
