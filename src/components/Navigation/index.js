@@ -46,6 +46,7 @@ const Header = (props) => {
           border: 0;
           font-size: 1.5rem;
           letter-spacing: 0.05em;
+          text-decoration: none;
           text-transform: uppercase;
           vertical-align: center;
           display: block;
@@ -55,7 +56,7 @@ const Header = (props) => {
           &:hover,
           &:focus {
             border-radius: 6px;
-            text-decoration: underline;
+            color: ${theme.colors.state.interactiveTextInverse};
           }
         }
 
