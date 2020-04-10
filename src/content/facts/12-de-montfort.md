@@ -6,8 +6,6 @@ image: /images/colossal-octopus.jpg
 imageSource: https://en.wikipedia.org/wiki/Pierre_Denys_de_Montfort
 ---
 
-Pierre Denys de Montfort was a French naturalist who had something of an obsession with giant octopuses. And you know how, when you think about something a whole lot, you start seeing it everywhere? Yep, that's what happened here.
+Pierre Denys de Montfort was a French naturalist who had a thing for giant octopuses. According to him, there were two types: the kraken of Norse mythology, and the much larger _colossal octopus_, whose hobbies included attacking ships and taking up lots of space.
 
-de Montfort told everyone they'd sunk a group of warships that mysteriously disappeared one night in 1782. Turns out the disappearance was less of a mystery than originally proposed and he was summarily discredited. His career tanked (probably attacked by a giant octopus), and he died destitute. 
-
-
+And so, when a group of British warships vanished into thin air one night in 1782, de Montfort jumped to the obvious conclusion and told everyone they'd been sunk by giant octopuses. Turns out, the navy knew exactly what had gone down, and it wasn't octopuses, giant or otherwise. de Montfort was thoroughly discredited and his career _tanked_. He did leave us with some pretty imaginative illustrations, though.
