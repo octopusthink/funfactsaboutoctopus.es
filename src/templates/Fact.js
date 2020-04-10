@@ -43,7 +43,7 @@ export const Page = (props) => {
                 top: -12rem;
                 left: -8rem;
                 font-size: 23rem;
-                letter-spacing: -0.07em;
+                letter-spacing: -0.02em;
                 opacity: 0.15;
                 color: #fefefe;
                 text-shadow:-4px -4px 0 #666,

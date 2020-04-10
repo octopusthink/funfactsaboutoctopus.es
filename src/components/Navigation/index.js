@@ -44,6 +44,7 @@ const Header = (props) => {
           ${interfaceUI.small(theme)};
           color: ${theme.colors.neutral.white};
           border: 0;
+          box-shadow: none;
           font-size: 1.5rem;
           letter-spacing: 0.05em;
           text-transform: uppercase;
@@ -55,7 +56,8 @@ const Header = (props) => {
           &:hover,
           &:focus {
             border-radius: 6px;
-            text-decoration: underline;
+            box-shadow: none;
+            color: ${theme.colors.state.interactiveTextInverse};
           }
         }
 

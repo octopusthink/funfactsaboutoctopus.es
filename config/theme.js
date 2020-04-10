@@ -140,11 +140,11 @@ export const theme = {
     },
 
     state: {
-      interactive: colors.red400,
-      interactiveTextInverse: colors.red500,
-      interactiveText: colors.red600,
-      hover: colors.yellow400,
-      hoverText: colors.yellow500,
+      interactive: colors.yellow400,
+      interactiveTextInverse: colors.yellow400,
+      interactiveText: colors.grey900,
+      hover: colors.red400,
+      hoverText: colors.red600,
       focusOutline: colors.pink200,
       focusText: colors.pink600,
       disabled: colors.grey700,
