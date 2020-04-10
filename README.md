@@ -26,10 +26,14 @@ To pull the latest changes, uninstall and reinstall the Nautilus dependency:
 npm uninstall nautilus && npm install --save octopusthink/nautilus
 ```
 
+## Facts about facts
+
+We add a new fact every month, generally on or around the 8th. If you have a fact you'd like to see here, feel free to open an issue or a pull request to discuss!
+
 ## License
 
 Copyright (c) 2020 [Octopus Think Ltd.](https://octopusthink.com/)
 
-The source code and content is shared under a [MIT license](https://opensource.org/licenses/MIT). If you'd like to repurpose anything here, feel free to go ahead! Credit is nice, but not strictly required.
+This project's source code and text are licensed under the [CC-BY-4.0 license](https://creativecommons.org/licenses/by/4.0/). Feel free to share, remix, and adapt, but please give us a wee credit line somewhere. ❤️ 
 
 All images are taken from public domain sources. If we got something wrong, please do feel free to drop us a line, and we'll swap it out.
