@@ -27,7 +27,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@2.0.0
         env:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN_GH_PAGES }}
           BRANCH: gh-pages
           COMMIT_EMAIL: robots@octopusthink.com
           COMMIT_NAME: Octopus Think Robot
